@@ -1,0 +1,71 @@
+.dashboard__header {
+	//
+	&__link {
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 20px;
+		letter-spacing: 0px;
+		color: #b0c1da;
+	}
+
+	&__sublink {
+		color: #1e324e;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0px;
+	}
+}
+.user-group:hover .user-group-hover\:block {
+	display: block;
+}
+.user-group-hover\:block {
+	margin-left: calc(-1.75rem * calc(1 - var(--tw-space-x-reverse)));
+	--tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+		var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.sidebar {
+	&__title {
+		color: #1e324e;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		letter-spacing: 0em;
+	}
+	&__subtitle {
+		color: #1e324e;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 17px;
+		letter-spacing: 0em;
+	}
+	&__tab {
+		overflow: hidden;
+
+		&-content {
+			max-height: 0;
+			transition: all 0.5s;
+		}
+	}
+}
+input:checked + .sidebar__tab-label {
+	background-color: #f5f5f5;
+}
+input:checked + .sidebar__tab-label .sidebar__title {
+	color: #0069ff;
+}
+input:checked + .sidebar__tab-label .sidebar__tab-icon svg {
+	transform: rotate(180deg);
+	stroke: #0069ff;
+}
+input:checked + .sidebar__tab-label::after {
+	transform: rotate(90deg);
+}
+input:checked ~ .sidebar__tab-content {
+	max-height: 100vh;
+}

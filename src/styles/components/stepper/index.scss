@@ -1,0 +1,32 @@
+.c-stepper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.c-stepper__item {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.c-stepper__item:before {
+	--size: 3rem;
+	content: "";
+	position: relative;
+	z-index: 1;
+	display: block;
+	width: var(--size);
+	height: var(--size);
+	border-radius: 50%;
+	margin: 1rem auto 0;
+}
+.c-stepper__item:not(:last-child):after {
+	content: "";
+	position: relative;
+	top: 1.5rem;
+	left: 50%;
+	height: 2px;
+	background-color: #e0e0e0;
+	order: -1;
+}

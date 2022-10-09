@@ -1,0 +1,16 @@
+.layout {
+	&__dashboardFrame {
+		display: flex;
+
+		& > div:nth-child(1) {
+			width: 15.625rem;
+		}
+
+		& > div:nth-child(2) {
+			flex: 1;
+			overflow-y: auto;
+			padding: 2rem 1rem;
+			height: inherit;
+		}
+	}
+}

@@ -1,0 +1,114 @@
+# This is a sample build configuration for Docker.
+# Check our guides at https://confluence.atlassian.com/x/O1toN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+#image: atlassian/default-image:2
+image: node:alpine
+definitions:
+  services:
+    docker:
+      memory: 3000
+
+pipelines:
+  branches:
+    master:
+      - step:
+          caches:
+            - docker
+          name: Build and Push Docker Image
+          services:
+            - docker
+          script: # Modify the commands below to build your repository.
+            # Set $DOCKER_HUB_USERNAME and $DOCKER_HUB_PASSWORD as environment variables in repository settings
+            #            - export IMAGE_NAME=registry.humbergames.com/backend/user-service:staging-latest
+            - export IMAGE_NAME=$DOCKER_IMAGE_NAME:$BITBUCKET_COMMIT
+            - docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD
+            # build the Docker image (this will use the Dockerfile in the root of the repo)
+            - docker build -t $IMAGE_NAME .
+            # authenticate with the Docker Hub registry
+            # push the new Docker image to the Docker registry
+            - docker push $IMAGE_NAME
+      - step:
+          name: Deploy to Kubernetes
+          script:
+            - sed -i "s|{{image}}|$DOCKER_IMAGE_NAME:$BITBUCKET_COMMIT|g" kubernetes.yaml
+            - sed -i "s|{{replicas}}|1|g" kubernetes.yaml
+            - sed -i "s|{{namespace}}|rg-prod|g" kubernetes.yaml
+            - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+              variables:
+                AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                AWS_DEFAULT_REGION: "eu-west-1"
+                CLUSTER_NAME: "chiji14exchange"
+                KUBECTL_COMMAND: "apply"
+                RESOURCE_PATH: "kubernetes.yaml"
+                DEBUG: "true"
+
+    staging:
+      - step:
+          caches:
+            - docker
+          name: Build and Push Docker Image
+          services:
+            - docker
+          script: # Modify the commands below to build your repository.
+            # Set $DOCKER_HUB_USERNAME and $DOCKER_HUB_PASSWORD as environment variables in repository settings
+            #            - export IMAGE_NAME=registry.humbergames.com/backend/user-service:staging-latest
+            - export IMAGE_NAME=$DOCKER_IMAGE_NAME:$BITBUCKET_COMMIT
+            - docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD
+            # build the Docker image (this will use the Dockerfile in the root of the repo)
+            - cp .env.stage .env.example
+            - docker build -t $IMAGE_NAME .
+            # authenticate with the Docker Hub registry
+            # push the new Docker image to the Docker registry
+            - docker push $IMAGE_NAME
+      - step:
+          name: Deploy to Kubernetes
+          script:
+            - sed -i "s|{{image}}|$DOCKER_IMAGE_NAME:$BITBUCKET_COMMIT|g" kubernetes.yaml
+            - sed -i "s|{{replicas}}|1|g" kubernetes.yaml
+            - sed -i "s|{{namespace}}|rg-staging|g" kubernetes.yaml
+            - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+              variables:
+                AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                AWS_DEFAULT_REGION: "eu-west-1"
+                CLUSTER_NAME: "chiji14exchange"
+                KUBECTL_COMMAND: "apply"
+                RESOURCE_PATH: "kubernetes.yaml"
+                DEBUG: "true"
+
+    development:
+      - step:
+          caches:
+            - docker
+          name: Build and Push Docker Image
+          services:
+            - docker
+          script: # Modify the commands below to build your repository.
+            # Set $DOCKER_HUB_USERNAME and $DOCKER_HUB_PASSWORD as environment variables in repository settings
+            #            - export IMAGE_NAME=registry.humbergames.com/backend/user-service:staging-latest
+            - export IMAGE_NAME=$DOCKER_IMAGE_NAME:$BITBUCKET_COMMIT
+            - docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD
+            # build the Docker image (this will use the Dockerfile in the root of the repo)
+            - cp .env.dev .env
+            - docker build -t $IMAGE_NAME .
+            # authenticate with the Docker Hub registry
+            # push the new Docker image to the Docker registry
+            - docker push $IMAGE_NAME
+      - step:
+          name: Deploy to Kubernetes
+          script:
+            - sed -i "s|{{image}}|$DOCKER_IMAGE_NAME:$BITBUCKET_COMMIT|g" kubernetes.yaml
+            - sed -i "s|{{replicas}}|1|g" kubernetes.yaml
+            - sed -i "s|{{namespace}}|rg-dev|g" kubernetes.yaml
+            - pipe: atlassian/aws-eks-kubectl-run:1.2.0
+              variables:
+                AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                AWS_DEFAULT_REGION: "eu-west-1"
+                CLUSTER_NAME: "chiji14exchange"
+                KUBECTL_COMMAND: "apply"
+                RESOURCE_PATH: "kubernetes.yaml"
+                DEBUG: "true"

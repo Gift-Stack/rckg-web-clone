@@ -1,0 +1,38 @@
+$select-color-white: #1e324e;
+$select-background-color: #f9faff;
+
+.coinpair__switcher {
+	select {
+		border: 0;
+		outline: 0;
+		font: inherit;
+		width: 7em;
+		height: 2em;
+		color: $select-color-white;
+		border-radius: 0.25em;
+		font-weight: 600;
+		font-size: 1rem;
+		cursor: pointer;
+		background: $select-background-color;
+		padding: 0;
+		appearance: auto;
+		-webkit-appearance: auto;
+		option {
+			color: inherit;
+			font-size: 0.8rem;
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.coinpair__switcher .container {
+		column-gap: 1.5rem;
+	}
+}
+@media (min-width: 1440px) {
+	.coinpair__switcher .container {
+		column-gap: 2.5rem;
+	}
+}

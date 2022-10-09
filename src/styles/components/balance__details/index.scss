@@ -1,0 +1,11 @@
+.balance__details {
+	canvas {
+		margin: auto;
+	}
+}
+.balance__details-icon svg {
+	stroke: #0069ff;
+}
+.balance__details-icon-open svg {
+	transform: rotate(180deg);
+}

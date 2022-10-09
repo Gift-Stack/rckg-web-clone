@@ -1,0 +1,33 @@
+.switch {
+	min-width: 218px;
+	padding: 0.125rem;
+
+	& > div {
+		padding: 0.313rem 0.75rem;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__notActive {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 140%;
+		/* identical to box height, or 17px */
+
+		/* neutral/200(placeholders) */
+		color: #b0c1da;
+	}
+
+	&__active {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 140%;
+		/* identical to box height, or 17px */
+
+		color: #1e324e;
+	}
+}

@@ -1,0 +1,44 @@
+@import "./backComponent.scss";
+@import "../../screens.scss";
+.profile {
+	&__progressArea {
+		max-width: 30.625rem;
+	}
+
+	&__phone_verification {
+		.otp-area {
+			input {
+				width: 3rem;
+			}
+		}
+
+		.otp-area .mb-16 {
+			margin: 0;
+		}
+	}
+
+	&__change-password {
+		width: 50%;
+		margin: 0 auto;
+
+		@include screen("medium") {
+			width: 100%;
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.profile__phone_verification {
+		.verification_input {
+			width: 100%;
+		}
+	}
+}
+
+@media (min-width: 1440px) {
+	.profile__phone_verification {
+		.verification_input {
+			width: 50%;
+		}
+	}
+}

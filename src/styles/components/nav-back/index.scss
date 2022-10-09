@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+	.nav-back {
+		svg {
+			transform: scale(0.7);
+		}
+	}
+}
+
+@media (max-width: 425px) {
+	.nav-back {
+		svg {
+			transform: scale(0.6);
+		}
+	}
+}

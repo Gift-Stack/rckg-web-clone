@@ -1,0 +1,187 @@
+.transaction {
+	.transaction_switch {
+		max-width: 320px;
+		margin: auto;
+		border: 1px solid #dee8ff;
+		padding: 0.5em;
+		border-radius: 4px;
+
+		& > div {
+			padding: 0.5rem 0.75rem;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&__notActive {
+			font-style: normal;
+			font-weight: 400;
+			line-height: 140%;
+			width: 100%;
+			color: #b1c9ff;
+			height: 32px;
+			border-radius: 4px;
+		}
+
+		&__active {
+			font-style: normal;
+			font-weight: 400;
+			line-height: 140%;
+			width: 100%;
+			color: #1e324e;
+			height: 32px;
+			border-radius: 4px;
+		}
+	}
+
+	&__btnSection {
+		button {
+			width: -webkit-fill-available;
+		}
+	}
+	.transaction-select {
+		.transaction-select-item {
+			svg, img {
+				transform: scale(0.7);
+			}
+		}
+	}
+
+	.transaction-table {
+		.coins {
+			svg, img {
+				transform: scale(1);
+			}
+		}
+	}
+
+	.mobile-transaction-table {
+		.coins {
+			svg, img {
+				transform: scale(0.8);
+			}
+		}
+	}
+
+	.transaction-card {
+		svg {
+			transform: scale(0.7);
+		}
+	}
+	.card_shadow {
+		box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.12);
+	}
+
+	.trans-submit-btn button {
+		width: 100%;
+		font-weight: 400;
+	}
+}
+
+@media (max-width: 1024px) {
+	.transaction {
+		.transaction-table {
+			.coins {
+				svg, img {
+					transform: scale(0.7);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 425px) {
+	.transaction {
+		.transaction_switch {
+			max-width: 220px;
+		}
+		.card_shadow {
+			box-shadow: none;
+		}
+		.mobile-nav-back {
+			position: absolute;
+			top: 12%;
+			left: 6%;
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	.transaction {
+		.mobile-nav-back {
+			position: absolute;
+			top: 12%;
+			left: 7%;
+		}
+	}
+}
+
+@media (max-width: 320px) {
+	.transaction {
+		.mobile-nav-back {
+			position: absolute;
+			top: 12%;
+			left: 4%;
+		}
+	}
+}
+.transactions-table {
+	.table-select {
+		display: flex;
+		position: relative;
+		padding: 0.488rem 1.413rem;
+
+		select {
+			-webkit-appearance: none;
+			appearance: none;
+			border: none;
+			width: 100%;
+			font-style: normal;
+			font-weight: normal;
+			line-height: 140%;
+			outline: none;
+			background: #ffffff;
+		}
+
+		select:focus {
+			border: none;
+		}
+	}
+
+	.p8 {
+		width: 8%;
+	}
+
+	.p13 {
+		width: 13%;
+	}
+
+	.p14 {
+		width: 14%;
+	}
+
+	.p16 {
+		width: 16%;
+	}
+
+	.p17 {
+		width: 17%;
+	}
+
+	.p19 {
+		width: 19%;
+	}
+
+	.coins {
+		svg {
+			transform: scale(0.9);
+		}
+	}
+
+	.copy {
+		svg {
+			transform: scale(0.6);
+		}
+	}
+}

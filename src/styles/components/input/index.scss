@@ -1,0 +1,183 @@
+.input {
+	display: flex;
+	flex-direction: column;
+
+	label {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 140%;
+		/* identical to box height, or 20px */
+	}
+
+	&__container {
+		//height: 3rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		box-sizing: border-box;
+		outline: none;
+
+		svg {
+			margin-right: 1rem;
+			cursor: pointer;
+		}
+
+		input {
+			border: none;
+			width: 100%;
+			padding: 0.688rem 0.813rem;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 140%;
+		}
+
+		input[type="date"]::-webkit-calendar-picker-indicator {
+			background-image: url('data:image/svg+xml;utf8, <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3.83343 0.708374C4.1786 0.708374 4.45843 0.988199 4.45843 1.33337V2.72307C6.81484 2.51321 9.18534 2.51321 11.5418 2.72307V1.33337C11.5418 0.988199 11.8216 0.708374 12.1668 0.708374C12.5119 0.708374 12.7918 0.988199 12.7918 1.33337V2.84707C14.0359 3.02299 15.0189 4.0071 15.1853 5.26241L15.2574 5.80653C15.5608 8.09512 15.5346 10.4154 15.1796 12.6966C15.0038 13.8266 14.0858 14.6946 12.9476 14.8068L11.9534 14.9049C9.32426 15.1641 6.67593 15.1641 4.0467 14.9049L3.05253 14.8068C1.91441 14.6946 0.99636 13.8266 0.820518 12.6966C0.465552 10.4154 0.439352 8.09512 0.742718 5.80653L0.814843 5.26241C0.981243 4.00708 1.9642 3.02297 3.20843 2.84707V1.33337C3.20843 0.988199 3.48825 0.708374 3.83343 0.708374ZM4.20439 4.00237C6.72876 3.75344 9.27143 3.75344 11.7958 4.00237L12.5503 4.07679C13.2726 4.14802 13.8508 4.70716 13.9461 5.42666L14.0183 5.97078C14.0434 6.16087 14.0663 6.35121 14.0867 6.54171H1.91348C1.93389 6.35121 1.95668 6.16088 1.98188 5.97079L2.054 5.42666C2.14938 4.70716 2.72756 4.14802 3.44985 4.07679L4.20439 4.00237ZM1.81412 7.79171C1.7323 9.36512 1.81291 10.9444 2.05565 12.5044C2.14385 13.0712 2.60434 13.5065 3.1752 13.5629L4.16938 13.6609C6.71701 13.9121 9.28318 13.9121 11.8308 13.6609L12.8249 13.5629C13.3958 13.5065 13.8563 13.0712 13.9445 12.5044C14.1873 10.9444 14.2678 9.36512 14.186 7.79171H1.81412Z" fill="#607695"/> </svg>');
+		}
+
+		input:focus {
+			border: none;
+		}
+
+		input::placeholder {
+			font-style: normal;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 140%;
+			/* neutral/200(placeholders) */
+			color: #b0c1da;
+		}
+	}
+
+	&__info {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		line-height: 140%;
+		/* identical to box height, or 14px */
+	}
+}
+
+.select {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	label {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 140%;
+		/* identical to box height, or 20px */
+	}
+
+	select {
+		-webkit-appearance: none;
+		appearance: none;
+		border: none;
+		width: 100%;
+		padding: 0.688rem 0.813rem;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 140%;
+		outline: none;
+	}
+
+	select:focus {
+		border: none;
+	}
+
+	.arrow {
+		top: 1.8rem;
+		right: 0.813rem;
+		position: absolute;
+	}
+
+	&__info {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		line-height: 140%;
+		/* identical to box height, or 14px */
+	}
+}
+
+.country_phone_input {
+	position: relative;
+
+	select {
+		-webkit-appearance: none;
+		appearance: none;
+		border: none;
+		width: 100%;
+		padding: 0.688rem 0rem 0.688rem 0.813rem;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 140%;
+		outline: none;
+	}
+
+	select:focus {
+		border: none;
+	}
+
+	.input {
+		width: 100%;
+	}
+}
+
+.radio {
+	//display: grid;
+	//grid-template-columns: 1em auto;
+	//gap: 0.5em;
+	display: inline-flex;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	cursor: pointer;
+
+	input[type="radio"] {
+		/* Add if not using autoprefixer */
+		-webkit-appearance: none;
+		/* Remove most all native input styles */
+		appearance: none;
+		/* For iOS < 15 */
+		background-color: var(--form-background);
+		/* Not removed via appearance */
+		margin: 0 0.5rem;
+
+		font: inherit;
+		width: 1.5rem;
+		height: 1.5rem;
+		border: 0.15rem solid;
+		border-radius: 50%;
+		transform: translateY(-0.075em);
+	}
+
+	input[type="radio"]::before {
+		content: "";
+		width: 0.65rem;
+		height: 0.65rem;
+		border-radius: 50%;
+		transform: scale(0);
+		transition: 120ms transform ease-in-out;
+		box-shadow: inset 1rem 1rem var(--form-control-color);
+		/* Windows High Contrast Mode */
+		//background-color: CanvasText;
+	}
+
+	input[type="radio"]:checked::before {
+		//transform: scale(1);
+	}
+
+	input[type="radio"]:focus {
+		outline: max(2px, 0.15rem) solid;
+		outline-offset: max(2px, 0.15rem);
+	}
+}

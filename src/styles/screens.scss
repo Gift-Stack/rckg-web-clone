@@ -1,0 +1,33 @@
+@mixin screen($size) {
+	@if ($size == "laptop") {
+		@media screen and (max-width: 1024px) {
+			@content;
+		}
+	}
+	@if ($size == "medium") {
+		@media screen and (max-width: 768px) {
+			@content;
+		}
+	} @else if($size == "small") {
+		@media screen and (max-width: 640px) {
+			@content;
+		}
+	}
+}
+
+@mixin minScreen($size) {
+	@if ($size == "laptop") {
+		@media screen and (min-width: 1024px) {
+			@content;
+		}
+	}
+	@if ($size == "medium") {
+		@media screen and (min-width: 768px) {
+			@content;
+		}
+	} @else if($size == "small") {
+		@media screen and (min-width: 640px) {
+			@content;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+.transaction-container {
+	.transaction-container__wrapper {
+		min-width: 688px;
+
+		@include screen("small") {
+			min-width: 100%;
+		}
+	}
+}
+
+.transfer-container {
+	min-width: 688px;
+
+	@include screen("small") {
+		min-width: 100%;
+	}
+}

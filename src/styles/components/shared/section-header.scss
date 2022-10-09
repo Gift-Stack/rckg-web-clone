@@ -1,0 +1,24 @@
+.section-header {
+	height: 274px;
+	background-image: url(/img/wallet-header-background.png);
+
+	.section-header__title {
+		font-family: "Montserrat";
+		font-weight: bold;
+		font-size: 58px;
+		line-height: 71px;
+		color: #ffffff;
+	}
+
+	@include screen("small") {
+		background-image: none;
+		height: 74px;
+	}
+}
+.section-header__WSection {
+	padding-top: 65px;
+	height: 364px;
+}
+.section-header__WOSection {
+	margin-top: 86px;
+}

@@ -1,0 +1,81 @@
+.order-list-table-container {
+	.table-select {
+		display: flex;
+		position: relative;
+		padding: 0.488rem 1.413rem;
+
+		select {
+			-webkit-appearance: none;
+			appearance: none;
+			border: none;
+			width: 100%;
+			font-style: normal;
+			font-weight: normal;
+			line-height: 140%;
+			outline: none;
+			background: #ffffff;
+		}
+
+		select:focus {
+			border: none;
+		}
+	}
+
+	.p8 {
+		width: 8%;
+	}
+
+	.p13 {
+		width: 13%;
+	}
+
+	.p14 {
+		width: 14%;
+	}
+
+	.p16 {
+		width: 16%;
+	}
+
+	.p17 {
+		width: 17%;
+	}
+
+	.p19 {
+		width: 19%;
+	}
+
+	.coins {
+		svg {
+			transform: scale(0.9);
+		}
+	}
+
+	.copy {
+		svg {
+			transform: scale(0.6);
+		}
+	}
+}
+
+.filter-select {
+	.w-max {
+		width: 100%;
+	}
+	.table-select {
+		padding: 0.888rem 1.413rem !important;
+	}
+	button {
+		font-weight: 400 !important;
+	}
+}
+
+@media (max-width: 1024px) {
+	.order-list-table-container {
+		.coins {
+			svg {
+				transform: scale(0.6);
+			}
+		}
+	}
+}

@@ -1,0 +1,91 @@
+@keyframes slideFromTop {
+	0% {
+		transform: translateY(-3rem);
+		visibility: hidden;
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		visibility: visible;
+		opacity: 1;
+	}
+}
+@keyframes zoomIn {
+	0% {
+		transform: scale(0.8);
+		visibility: hidden;
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.modal-child {
+	max-width: 25.375rem;
+	background-color: white;
+	border-radius: 0.25rem;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10rem;
+	animation: zoomIn 0.3s linear both;
+	animation-delay: 0.5s;
+
+	box-shadow: 0px 6px 16px rgba(153, 155, 168, 0.1);
+}
+
+@keyframes slowLoad {
+	0% {
+		visibility: hidden;
+		opacity: 0;
+	}
+	100% {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.modal-layout {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.45);
+	z-index: 50000;
+	padding-bottom: 7rem;
+	overflow-y: auto;
+	animation: slowLoad 0.4s linear;
+
+	@supports (backdrop-filter: blur(5px)) {
+		backdrop-filter: blur(4px);
+	}
+
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.modal {
+	// General modal styling
+	&__head {
+		@include flex(row, space-between, center);
+		padding: 1.5rem 1.2rem 0;
+	}
+	&__body {
+		padding: 0 1.2rem;
+		.button-group {
+			@include flex(row, space-between, center);
+		}
+	}
+	&__foot {
+		padding: 1rem 1.2rem;
+		border-top: 1px solid #eff5fd;
+	}
+}

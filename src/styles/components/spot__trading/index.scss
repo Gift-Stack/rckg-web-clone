@@ -1,0 +1,66 @@
+.spot__trading {
+	.trade_switch {
+		max-width: 264px;
+		margin: auto;
+
+		& > div {
+			padding: 0.5rem 0.75rem;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&__notActive {
+			font-style: normal;
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 140%;
+			width: 100%;
+			color: #ffffff;
+			height: 32px;
+		}
+
+		&__active {
+			font-style: normal;
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 140%;
+			width: 100%;
+			color: #ffffff;
+			height: 32px;
+		}
+	}
+
+	&__btnSection {
+		button {
+			width: -webkit-fill-available;
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.spot__trading .trade_extra {
+		display: flex;
+	}
+
+	.spot__trading .trade_leading_snug {
+		display: none;
+	}
+}
+
+@media (min-width: 1440px) {
+	.spot__trading .trade_extra {
+		display: none;
+	}
+
+	.spot__trading .trade_leading_snug {
+		display: block;
+	}
+}
+
+@media (max-width: 768px) {
+	.spot__trading .trade_input {
+		padding-right: 8rem;
+	}
+}

@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rocket-global-fe
+  namespace: {{namespace}}
+  labels:
+    app: rocket-global-fe
+spec:
+  selector:
+    app: rocket-global-fe
+  ports:
+    - port: 3000
+      protocol: TCP
+      targetPort: 3000
+      name: http
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rocket-global-fe
+  namespace: {{namespace}}
+  labels:
+    app: rocket-global-fe
+spec:
+  replicas: 1
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: rocket-global-fe
+  template:
+    metadata:
+      labels:
+        app: rocket-global-fe
+    spec:
+      containers:
+        - name: rocket-global-fe
+          image: {{image}}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              protocol: TCP

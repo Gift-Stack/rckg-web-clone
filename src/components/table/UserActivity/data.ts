@@ -1,0 +1,168 @@
+import { ITableColumn } from "../model";
+import { ILoginActivityTableData } from "./model";
+
+export const loginActivityColumns: ITableColumn[] = [
+	{
+		title: "Date/Time",
+		dataIndex: "date_time",
+		key: "date_time",
+	},
+	{
+		title: "Source",
+		dataIndex: "source",
+		key: "source",
+	},
+	{
+		title: "Location",
+		dataIndex: "location",
+		key: "location",
+	},
+	{
+		title: "IP Address",
+		dataIndex: "ip_address",
+		key: "ip_address",
+	},
+];
+
+export const loginActivityTableData: ILoginActivityTableData[] = [
+	{
+		id: 1,
+		date_time: new Date().toISOString(),
+		source: "Web",
+		location: "Lagos",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 2,
+		date_time: new Date().toISOString(),
+		source: "Web",
+		location: "Lagos",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 3,
+		date_time: new Date().toISOString(),
+		source: "Web",
+		location: "Akwa Ibom",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 4,
+		date_time: new Date().toISOString(),
+		source: "Android",
+		location: "Ondo",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 5,
+		date_time: new Date().toISOString(),
+		source: "Android",
+		location: "Ogun",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 6,
+		date_time: new Date().toISOString(),
+		source: "iOS",
+		location: "Lagos",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 7,
+		date_time: new Date().toISOString(),
+		source: "Web",
+		location: "Benin",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 8,
+		date_time: new Date().toISOString(),
+		source: "Web",
+		location: "Delta",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 9,
+		date_time: new Date().toISOString(),
+		source: "Android",
+		location: "Delta",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 10,
+		date_time: new Date().toISOString(),
+		source: "Web",
+		location: "Lagos",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 11,
+		date_time: new Date().toISOString(),
+		source: "Web",
+		location: "Lagos",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 12,
+		date_time: new Date().toISOString(),
+		source: "Web",
+		location: "Akwa Ibom",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 13,
+		date_time: new Date().toISOString(),
+		source: "Android",
+		location: "Ondo",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 14,
+		date_time: new Date().toISOString(),
+		source: "Android",
+		location: "Ogun",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 15,
+		date_time: new Date().toISOString(),
+		source: "iOS",
+		location: "Lagos",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 16,
+		date_time: new Date().toISOString(),
+		source: "Web",
+		location: "Benin",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 17,
+		date_time: new Date().toISOString(),
+		source: "Web",
+		location: "Delta",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 18,
+		date_time: new Date().toISOString(),
+		source: "Android",
+		location: "Delta",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 19,
+		date_time: new Date().toISOString(),
+		source: "Web",
+		location: "Lagos",
+		ip_address: "197.20.123.54",
+	},
+	{
+		id: 20,
+		date_time: new Date().toISOString(),
+		source: "Web",
+		location: "Lagos",
+		ip_address: "197.20.123.54",
+	},
+];

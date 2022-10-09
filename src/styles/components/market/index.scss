@@ -1,0 +1,26 @@
+.market {
+	.market-table {
+		.coins {
+			svg {
+				transform: scale(1);
+			}
+		}
+	}
+
+	.mobile-market-table {
+		.coins {
+			svg {
+				transform: scale(0.8);
+			}
+		}
+	}
+
+	.market-card {
+		svg {
+			transform: scale(0.7);
+		}
+	}
+	.card_shadow {
+		box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.12);
+	}
+}

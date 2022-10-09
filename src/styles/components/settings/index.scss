@@ -1,0 +1,13 @@
+.settings__current-features {
+	animation: 1s slider;
+	transform: translateY(0px);
+}
+
+@keyframes slider {
+	from {
+		transform: translateY(518px);
+	}
+	to {
+		transform: translateY(0px);
+	}
+}

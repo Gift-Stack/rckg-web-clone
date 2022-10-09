@@ -1,0 +1,23 @@
+.orderBook {
+	&__head {
+		&__title {
+			@include flex(row, space-between, center);
+		}
+
+		&__selector {
+			@include flex(row, space-between, center);
+		}
+	}
+
+	&__tab {
+		overflow-x: auto;
+		overflow-y: auto;
+		white-space: nowrap;
+		&__title {
+			@include flex(row, space-between, center);
+		}
+		&__content {
+			@include flex(row, space-between, center);
+		}
+	}
+}

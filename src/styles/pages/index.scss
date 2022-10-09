@@ -1,0 +1,61 @@
+.auth {
+	&__heading {
+		font-family: IBM Plex Sans;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 30px;
+		line-height: 39px;
+		/* identical to box height */
+
+		letter-spacing: 0.01em;
+		max-width: 290px;
+		color: #1e324e;
+	}
+
+	&__desc {
+		font-family: IBM Plex Sans;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 140%;
+		/* or 20px */
+
+		text-align: center;
+
+		/* neutral/300 */
+
+		max-width: 398px;
+		color: #607695;
+	}
+
+	&__form {
+		max-width: 25.625rem;
+	}
+
+	&__btnSection {
+		button {
+			width: -webkit-fill-available;
+		}
+	}
+
+	&__link {
+		font-style: normal;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 140%;
+		/* identical to box height, or 20px */
+
+		letter-spacing: 0.02em;
+	}
+
+	&__formHeadingSvgContainer {
+		max-width: 7.188rem;
+		height: 6.512rem;
+	}
+	&__logoArea {
+		& > img {
+			object-fit: contain;
+			object-position: left;
+		}
+	}
+}
